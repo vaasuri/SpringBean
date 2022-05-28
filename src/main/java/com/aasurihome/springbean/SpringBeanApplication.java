@@ -15,7 +15,16 @@ public class SpringBeanApplication {
 		ApplicationContext factory = SpringApplication.run(SpringBeanApplication.class, args);
 		Company company = factory.getBean(Company.class);
 		Address address = company.getAddress();
+		System.out.println("Company 1");
 		System.out.println(address.getNumber() + " " + address.getStreet() + ", " + address.getCity() + " " + address.getZip());
-	}
+		System.out.println("Employees=" + company.getEmployees());
+		System.out.println();
+
+		Company company2 = factory.getBean(Company.class);
+		Address address2 = company2.getAddress();
+		System.out.println("Company 2");
+		System.out.println(address2.getNumber() + " " + address2.getStreet() + ", " + address2.getCity() + " " + address2.getZip());
+		System.out.println("Employees=" + company2.getEmployees());
+}
 
 }
